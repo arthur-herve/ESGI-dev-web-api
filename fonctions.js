@@ -18,7 +18,9 @@ console.log("Exercice 2");
 function maxNumberInArray(tableauDeNombre) {
   return Math.max(...tableauDeNombre);
 }
-console.log([8, 21, 6, 1, 3, 16, 2, 0, 3, 46, 21, 3, 45, 321, 8, 4, 23]);
+console.log(
+  maxNumberInArray([8, 21, 6, 1, 3, 16, 2, 0, 3, 46, 21, 3, 45, 321, 8, 4, 23])
+);
 console.log("\n================================\n");
 
 /**
@@ -54,7 +56,7 @@ console.log("\n================================\n");
  */
 console.log("Exercice 5");
 
-const nombreAConvertir = 477;
+const nombreAConvertir = 28;
 const motsDizaineTab = [
   "dix",
   "vingt",
@@ -92,47 +94,55 @@ const motsUniteTab = [
 ];
 function nombreVersMots(nombre) {
   let nombreEnMot = "";
-  nombre = nombre.toString();
-  switch (nombre.length) {
+  nombreStr = nombre.toString();
+  switch (nombreStr.length) {
     case 3:
-      return +nombre[0] > 1
+      return +nombreStr[0] > 1
         ? (nombreEnMot =
             nombreEnMot +
-            motsUniteTab[+nombre[0]] +
+            motsUniteTab[+nombreStr[0]] +
             "-cent" +
             "-" +
-            nombreVersMots(nombre.substring(1)))
+            nombreVersMots(nombreStr.substring(1)))
         : (nombreEnMot =
-            nombreEnMot + "cent" + "-" + nombreVersMots(nombre.substring(1)));
+            nombreEnMot +
+            "cent" +
+            "-" +
+            nombreVersMots(nombreStr.substring(1)));
       break;
     case 2:
-      switch (nombre[0]) {
+      switch (nombreStr[0]) {
         case "0":
-          return nombreVersMots(nombre.substring(1));
+          return nombreVersMots(nombreStr.substring(1));
           break;
         case "1":
-          return motsDixTab[+nombre[1]];
+          return motsDixTab[+nombreStr[1]];
           break;
         case "7":
-          return motsDizaineTab[+nombre[0] - 1] + "-" + motsDixTab[+nombre[1]];
+          return (
+            motsDizaineTab[+nombreStr[0] - 1] + "-" + motsDixTab[+nombreStr[1]]
+          );
           break;
         case "9":
           return (
-            "-" + motsDizaineTab[+nombre[0] - 1] + "-" + motsDixTab[+nombre[1]]
+            "-" +
+            motsDizaineTab[+nombreStr[0] - 1] +
+            "-" +
+            motsDixTab[+nombreStr[1]]
           );
           break;
         default:
           return (
-            motsDizaineTab[+nombre[0] - 1] +
+            motsDizaineTab[+nombreStr[0] - 1] +
             "-" +
-            nombreVersMots(nombre.substring(1))
+            nombreVersMots(nombreStr.substring(1))
           );
           return;
           break;
       }
       break;
     case 1:
-      return motsUniteTab[+nombre];
+      return motsUniteTab[+nombreStr];
       break;
     default:
       break;
@@ -184,7 +194,7 @@ const tabNbrCroissant = [
 ];
 
 function ordonnerCroissant(tableauNbrDesordre) {
-  return tableauNbrDesordre.sort((a, b) => a - b);
+  return tableauNbrDesordre.sort((a, b) => b - a); //Je me suis trompé d'énoncé, j'avaius fait croissant, j'ai juste changé
 }
 console.log(ordonnerCroissant(tabNbrCroissant));
 console.log("\n================================\n");

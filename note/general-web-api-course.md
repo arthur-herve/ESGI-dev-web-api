@@ -40,5 +40,31 @@ La réponse d'une requête HTTP avec un status code :
 
 UNe API REST est **STATELESS**, c'est à dire que les terminaux ne doivent pas partager d'informations. Une ressource c'est une requête sans réel dialogue, soit une récupération sans stockage d'information de transition. Les requêtes sont indépendantes et selon microsoft, les requêtes peuvent arriver dans n'importe quel ordre.  
 
+
+### Structure Web historique :  
+>LAMP
+>- Linux
+>- Apache
+>- Mysql
+>- Php  
+
+### Les nouvelles structures web :
+>MEAN
+> - MongoDB
+> - Express
+> - Angular
+> - Node  
+
+>MERN
+> - MongoDB
+> - Express
+> - Next
+> - Node  
+
+
 # Instruction sur le projet
 En .md, citer les sources.
+
+En logiciel outil pour tester les API, on le droit à : Postman, Insomnia. Si on est à l'ancienne CURL.  
+
+Utilisation de Express
